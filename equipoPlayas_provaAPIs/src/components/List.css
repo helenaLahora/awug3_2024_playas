@@ -1,0 +1,11 @@
+.list {
+    width:100%;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    padding:0;
+    margin:0;
+  }  

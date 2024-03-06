@@ -1,0 +1,44 @@
+p,h3{
+  text-align: left;
+}
+
+.beer {
+  text-align: center;
+  width: 150px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform .2s ease;
+  margin:10px 2px 10px 2px;
+}
+
+.beer:hover {
+  background: #cacaca;
+}
+
+.beer-image img {
+  max-width: 50px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.beer-details {
+  color: #333;
+  font-size: smaller;
+}
+
+.beer-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.beer-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.beer-ingredients {
+  font-size: 14px;
+  margin-top: 10px;
+}
