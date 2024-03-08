@@ -9,22 +9,24 @@ function BusLiniaList() {
     <FetcherBusLinies>
       {({ data, loading, error }) => {
         if (loading) {
-          return <Loader />; // Show loading indicator while data is being loaded
+          return <Loader />; // Mostrar l'indicador de càrrega mentre es carreguen les dades
         }
 
         if (error) {
-          return <div className="error">{error.message}</div>; // Show error message in case of error
+          return <div className="error">{error.message}</div>; // Mostrar missatge d'error en cas d'error
         }
 
         return (
-          <ul className="BusLinia-list">
-            {data.map(busLinia => (
-              // Check if busLinia.properties exists before rendering
-              busLinia.properties ? (
-                <BusLinia key={busLinia.id} busLinia={busLinia.properties} /> // Render the bus line list
-              ) : null
-            ))}
-          </ul>
+          <div className="listContainer">
+            <h2>Linies de Bus</h2>
+            <ul className="cardContainer">
+              {data.map(busLinia => (
+                busLinia.properties ? (
+                  <BusLinia key={busLinia.id} busLinia={busLinia.properties} /> // Renderitzar la llista
+                ) : null
+              ))}
+            </ul>
+          </div>
         );
       }}
     </FetcherBusLinies>

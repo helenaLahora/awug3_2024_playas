@@ -8,7 +8,7 @@ function FetcherBusParades({ children }) {
   useEffect(() => {
     setLoading(true); // Indiquem que comença la càrrega
 
-    fetch('https://api.tmb.cat/v1/transit/parades?app_id=b2840f13&app_key=8d96b390bd3dab7a484de10fbce6e435&limit=15') // Fem una crida a l'API de Parades de Bus
+    fetch('https://api.tmb.cat/v1/transit/parades?app_id=b2840f13&app_key=8d96b390bd3dab7a484de10fbce6e435&limit=15') // Fem una crida a l'API
       .then(response => {
         if (!response.ok) {
           throw new Error('Error al recollir dades: Parades de bus'); // Llençar error si la resposta no és ok
@@ -16,7 +16,10 @@ function FetcherBusParades({ children }) {
         return response.json(); // Convertim la resposta a JSON
       })
       .then(data => {
-        setData(data.features); // Emmagatzemem les dades rebudes a l'estat
+        // Flatten the array of arrays into a single array
+        const flattenedData = data.features.flatMap(feature => feature);
+
+        setData(flattenedData); // Emmagatzemem les dades rebudes a l'estat
         setLoading(false); // Indiquem que hem acabat de carregar
       })
       .catch(error => {
@@ -25,7 +28,6 @@ function FetcherBusParades({ children }) {
       });
   }, []);
 
-  console.log(data);
 
   // Retornem els components 'children' amb les dades, l'estat de càrrega i els errors com a propietats
   return children({ data, loading, error });

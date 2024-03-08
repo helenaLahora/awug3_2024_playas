@@ -13,6 +13,7 @@ function App() {
       </header>
       <main>
         <LlistaBusLinies />
+        <LlistaBusParades />
       </main>
     </div>
   );
