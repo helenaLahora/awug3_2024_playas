@@ -20,10 +20,10 @@ function BusParadaList() {
           <div className="listContainer">
             <h2>Parades de Bus</h2>
             <ul className="cardContainer">
-              {data && data.properties.map(busParada => (
+              {data.map(busParada => (
                 busParada.properties ? (
-                  <BusParada key={busParada.id} busParada={busParada} /> // Renderitzar la llista de parades de bus
-                  ) : null
+                  <BusParada key={busParada.id} busParada={busParada.properties} /> // Renderitzar la llista de parades de bus
+                ) : null
               ))}
             </ul>
           </div>

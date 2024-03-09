@@ -25,9 +25,6 @@ function FetcherMetroEstacions({ children }) {
       });
   }, []);
 
-  console.log(data);
-
-
   // Retornem els components 'children' amb les dades, l'estat de càrrega i els errors com a propietats
   return children({ data, loading, error });
 }

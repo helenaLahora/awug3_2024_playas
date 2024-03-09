@@ -3,7 +3,7 @@ import './App.css';
 import LlistaBusLinies from './components/LlistaBusLinies';
 import LlistaBusParades from './components/LlistaBusParades';
 import LlistaMetroLinies from './components/LlistaMetroLinies';
-import LlistaMetroEstacio from './components/LlistaMetroEstacions';
+import LlistaMetroEstacions from './components/LlistaMetroEstacions';
 
 function App() {
   return (
@@ -14,6 +14,8 @@ function App() {
       <main>
         <LlistaBusLinies />
         <LlistaBusParades />
+        <LlistaMetroEstacions />
+        <LlistaMetroLinies />
       </main>
     </div>
   );

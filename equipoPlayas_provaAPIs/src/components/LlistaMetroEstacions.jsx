@@ -17,11 +17,16 @@ function MetroEstacioList() {
         }
 
         return (
-          <ul className="MetroEstacio-list">
-            {data.properties.map(metroEstacio => (
-              <MetroEstacio key={metroEstacio.id} metroEstacio={metroEstacio} /> // Renderitzar la llista d'estacions de metro
-            ))}
-          </ul>
+          <div className="listContainer">
+            <h2>Estacions de Metro</h2>
+            <ul className="cardContainer">
+              {data.map(metroEstacio => (
+                metroEstacio.properties ? (
+                  <MetroEstacio key={metroEstacio.id} metroEstacio={metroEstacio.properties} /> // Renderitzar la llista d'estacions de metro
+                ) : null
+              ))}
+            </ul>
+          </div>
         );
       }}
     </FetcherMetroEstacions>
